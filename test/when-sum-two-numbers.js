@@ -6,7 +6,7 @@ describe('When sum two numbers', function() {
         var sum = element(by.binding('latest'));
         var superCalculatorUrl = 'http://juliemr.github.io/protractor-demo/';
 
-        it('return sum of any two numbers', function() {
+        it('return sum of any two-digit numbers', function() {
             browser.get(superCalculatorUrl);
             firstNumber.sendKeys(11);
             secondNumber.sendKeys(22);
@@ -14,6 +14,16 @@ describe('When sum two numbers', function() {
             goButton.click();
 
             expect(sum.getText()).toEqual(11 + 22 + '');
+        });
+
+        it('return sum of any three-digit numbers', function() {
+            browser.get(superCalculatorUrl);
+            firstNumber.sendKeys(100);
+            secondNumber.sendKeys(200);
+
+            goButton.click();
+
+            expect(sum.getText()).toEqual(100 + 200 + '');
         });
     });
 });
