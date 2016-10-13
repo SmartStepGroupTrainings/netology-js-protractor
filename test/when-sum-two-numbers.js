@@ -25,5 +25,28 @@ describe('When sum two numbers', function() {
 
             expect(sum.getText()).toEqual(100 + 200 + '');
         });
+
+
+
+
+
+
+
+
+
+        function sumNumbers(first, second) {
+            firstNumber.sendKeys(first);
+            secondNumber.sendKeys(second);
+            goButton.click();
+        }
+
+        it('save 3 lastest calculation results into history', function() {
+            browser.get(superCalculatorUrl);
+            sumNumbers(1, 2);
+            sumNumbers(2, 3);
+
+            var calculationHistory = element.all(by.repeater('result in memory'));
+            expect(calculationHistory.count()).toEqual(2);
+        });
     });
 });
