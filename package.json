@@ -1,0 +1,30 @@
+{
+  "name": "protractor-e2e-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node_modules/protractor/bin/protractor conf.js --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SmartStepGroupTrainings/netology-js-protractor.git"
+  },
+  "keywords": [
+    "protractor",
+    "e2e",
+    "testing"
+  ],
+  "author": "DP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SmartStepGroupTrainings/netology-js-protractor/issues"
+  },
+  "homepage": "https://github.com/SmartStepGroupTrainings/netology-js-protractor#readme",
+  "devDependencies": {
+    "protractor": "^4.0.9"
+  }
+}

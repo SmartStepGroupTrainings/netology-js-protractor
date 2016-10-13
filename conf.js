@@ -8,11 +8,20 @@ exports.config = {
         browserName: 'chrome'
     },
 
+    suites: {
+        sum: [
+            'test/*add*.js',
+            'test/*sum*.js'
+        ],
+        substract: [
+            'test/*substract*.js'
+        ]
+    },
+
     onPrepare: function() {
-        jasmine.getEnv().addReporter(
-            new Jasmine2HtmlReporter({
-                savePath: 'test/screenshots'
-            })
-        );
+        jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
+            savePath: './test/reports/',
+            screenshotsFolder: 'images'
+        }));
     }
 }
