@@ -40,13 +40,23 @@ describe('When sum two numbers', function() {
             goButton.click();
         }
 
-        it('save 3 lastest calculation results into history', function() {
+        it('save latest calculation results into history', function() {
             browser.get(superCalculatorUrl);
             sumNumbers(1, 2);
             sumNumbers(2, 3);
 
             var calculationHistory = element.all(by.repeater('result in memory'));
             expect(calculationHistory.count()).toEqual(2);
+        });
+
+        it('show history of calculation results in reverse order (latest first) ', function() {
+            browser.get(superCalculatorUrl);
+            sumNumbers(1, 0);
+            sumNumbers(2, 0);
+
+            var calculationHistory = element.all(by.repeater('result in memory'));
+            expect(calculationHistory.first().getText()).toContain('2');
+            expect(calculationHistory.last().getText()).toContain('1');
         });
     });
 });
